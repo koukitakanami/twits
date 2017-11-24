@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <h3>以下の内容で、ツイートしますか？</h3>
+      <%= form_for(@twit) do |f| %>
+        <!-- `f.hidden_field`を使用して、リクエストパラメータに値を設定できるようにしています。 -->
+        <%= f.hidden_field :content %>
+
+        <p>内容:<%= @twit.content %></p>
+        <%= f.submit "ツイートする", class: 'btn btn-primary btn-block' %>
+      <% end %>
+      
+      <%= form_for(@twit, url: new_twit_path, method: 'get') do |f| %>
+        <%= f.hidden_field :content %>
+        <%= f.submit "もどる", name: 'back', class: 'btn btn-default btn-block' %>
+      <% end %>
+  </div>
+</div>
