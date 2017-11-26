@@ -1,10 +1,21 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <header>
+      <p style="text-align:center">
+        <%= link_to "ホーム", twits_path %>
+      </p>
+      <p style="text-align:right">
+        <%= link_to new_twit_path do %>
+        <%= image_tag "tubu.png" %>
+      </p>
+      <% end %>
+    </header>
+    
     <p><%= notice %></p>
 
-<%= link_to "つぶやく", new_twit_path %>
+<!--%= link_to "つぶやく", new_twit_path %-->
 
-<h1>ツイート一覧</h1>
+<!--h1>ツイート一覧</h1-->
 
 
 <% @twits.each do |twit| %>
